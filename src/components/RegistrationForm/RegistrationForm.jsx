@@ -1,10 +1,12 @@
 import { Formik, Form, Field } from 'formik';
 import { useDispatch } from 'react-redux';
+import { register } from '../../redux/register/operations';
 
 export function RegistrationForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
+    console.log(values);
     dispatch(register(values));
     actions.resetForm();
   };
@@ -13,7 +15,7 @@ export function RegistrationForm() {
       initialValues={{
         name: '',
         email: '',
-        dateOfBirth: '',
+        date: '',
       }}
       onSubmit={handleSubmit}
     >

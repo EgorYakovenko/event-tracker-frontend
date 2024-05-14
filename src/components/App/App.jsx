@@ -18,8 +18,8 @@ function App() {
 
   return (
     <>
-      <EventsList />
       <Routes>
+        <Route path="/" element={<EventsList />} />
         <Route path="/register" element={<Registration />} />
       </Routes>
     </>
